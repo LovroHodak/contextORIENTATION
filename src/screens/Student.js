@@ -14,7 +14,7 @@ export default function Student({
   return (
     <div style={{ border: "2px solid grey" }}>
       <div style={{ border: "2px solid red" }}>
-        <h1>Student</h1>
+        <h1>Student (child)</h1>
         <p>{student.name}</p>
         <p>Year Average: {student.yearAverage}</p>
         <button onClick={() => increaseYearGrade(student.id)}>
