@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { MyContext } from "../MyContexts";
 import Student from "./Student";
@@ -15,11 +15,29 @@ export default function States() {
     increaseHearPoints,
     decreaseHearPoints,
     increaseWritePoints,
-    decreaseWritePoints
+    decreaseWritePoints,
   ] = useContext(MyContext);
+
+  const [name, setName] = useState("");
+
+  const updateName = (e) => {
+    setName(e.target.value);
+  };
+
+  /* const getId = (id) => {
+    console.log(id)
+  }
+
+  const changeName = (e) => {
+    e.preventDefault();
+  } */
+
   return (
     <div>
       <Link to="./functions">Go To Functions</Link>
+      <Link to="./inputss" style={{ marginLeft: 15 }}>
+        Go To Inputs
+      </Link>
 
       <div style={{ display: "flex" }}>
         <div style={{ display: "flex" }}>
@@ -28,6 +46,12 @@ export default function States() {
               <div key={i} style={{ border: "2px solid tomato" }}>
                 <h1>States</h1>
                 <p>{student.name}</p>
+
+                <form>
+                  <input onChange={updateName} value={name} type="text" name="name" placeholder="name" />
+                  <button>Change name</button>
+                </form>
+
                 <p>Year Average: {student.yearAverage}</p>
                 <button onClick={() => increaseYearGrade(student.id)}>
                   + increase
@@ -44,20 +68,75 @@ export default function States() {
                           grade CATEGORY: <b>{grade.category}</b>
                         </p>
                         <p>grade GRADE: {grade.grade}</p>
-                        <button onClick={() => increaseCategoryGrade(student.id, grade.id)}>+</button>
-                        <button onClick={() => decreaseCategoryGrade(student.id, grade.id)}>-</button>
+                        <button
+                          onClick={() =>
+                            increaseCategoryGrade(student.id, grade.id)
+                          }
+                        >
+                          +
+                        </button>
+                        <button
+                          onClick={() =>
+                            decreaseCategoryGrade(student.id, grade.id)
+                          }
+                        >
+                          -
+                        </button>
                         <div>
                           {grade.points.map((point, i) => {
                             return (
                               <div key={i} style={{ border: "2px solid pink" }}>
                                 <p>grade POINTS:</p>
                                 <p>point HEAR: {point.hear}</p>
-                                <button onClick={() => increaseHearPoints(student.id, grade.id, point.id)}>+ hear</button>
-                                <button onClick={() => decreaseHearPoints(student.id, grade.id, point.id)}>- hear</button>
+                                <button
+                                  onClick={() =>
+                                    increaseHearPoints(
+                                      student.id,
+                                      grade.id,
+                                      point.id
+                                    )
+                                  }
+                                >
+                                  + hear
+                                </button>
+                                <button
+                                  onClick={() =>
+                                    decreaseHearPoints(
+                                      student.id,
+                                      grade.id,
+                                      point.id
+                                    )
+                                  }
+                                >
+                                  - hear
+                                </button>
                                 <p>point WRITE: {point.write}</p>
-                                <button onClick={() => increaseWritePoints(student.id, grade.id, point.id)}>+ write</button>
-                                <button onClick={() => decreaseWritePoints(student.id, grade.id, point.id)}>- write</button>
+                                <button
+                                  onClick={() =>
+                                    increaseWritePoints(
+                                      student.id,
+                                      grade.id,
+                                      point.id
+                                    )
+                                  }
+                                >
+                                  + write
+                                </button>
+                                <button
+                                  onClick={() =>
+                                    decreaseWritePoints(
+                                      student.id,
+                                      grade.id,
+                                      point.id
+                                    )
+                                  }
+                                >
+                                  - write
+                                </button>
                                 <p>point MOVE: {point.move}</p>
+                                <p style={{ color: "red" }}>
+                                  COMMENT: {point.comment}
+                                </p>
                               </div>
                             );
                           })}

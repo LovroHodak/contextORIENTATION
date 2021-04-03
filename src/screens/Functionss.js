@@ -8,6 +8,7 @@ export default function Functionss() {
   return (
     <div>
       <Link to="./">Go Home</Link>
+      <Link to="./inputss" style={{marginLeft: 15}}>Go To Inputs</Link>
       <h1>Functions</h1>
       <Function1 />
       <Function2 />

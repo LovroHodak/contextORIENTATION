@@ -19,12 +19,14 @@ export const MyProvider = (props) => {
               hear: 5,
               write: 5,
               move: 5,
+              comment: 'That is ok.'
             },
             {
               id: 52,
               hear: 6,
               write: 6,
               move: 6,
+              comment: 'Not so bad.'
             },
           ],
         },
@@ -38,12 +40,14 @@ export const MyProvider = (props) => {
               hear: 7,
               write: 7,
               move: 7,
+              comment: 'I have seen better'
             },
             {
               id: 53,
               hear: 8,
               write: 8,
               move: 8,
+              comment: 'Mamma mia.'
             },
           ],
         },
@@ -57,12 +61,14 @@ export const MyProvider = (props) => {
               hear: 9,
               write: 9,
               move: 9,
+              comment: 'The best.'
             },
             {
               id: 54,
               hear: 10,
               write: 10,
               move: 10,
+              comment: 'Not enough.'
             },
           ],
         },
@@ -83,12 +89,14 @@ export const MyProvider = (props) => {
               hear: 9,
               write: 9,
               move: 9,
+              comment: 'Above average.'
             },
             {
               id: 55,
               hear: 10,
               write: 10,
               move: 10,
+              comment: 'Unbelivable.'
             },
           ],
         },
@@ -102,12 +110,14 @@ export const MyProvider = (props) => {
               hear: 8,
               write: 8,
               move: 8,
+              comment: 'Spectacular.'
             },
             {
               id: 56,
               hear: 9,
               write: 9,
               move: 9,
+              comment: 'Uniqe.'
             },
           ],
         },
@@ -121,12 +131,14 @@ export const MyProvider = (props) => {
               hear: 10,
               write: 10,
               move: 10,
+              comment: 'Once in a life-time.'
             },
             {
               id: 57,
               hear: 10,
               write: 10,
               move: 10,
+              comment: 'Proffesional.'
             },
           ],
         },

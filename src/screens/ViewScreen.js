@@ -79,6 +79,7 @@ export default function ViewScreen() {
                           - write
                         </button>
                                 <p>point MOVE: {point.move}</p>
+                                <p style={{color: 'red'}}>COMMENT: {point.comment}</p>
                               </div>
                             );
                           })}
